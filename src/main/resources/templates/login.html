@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link th:href="@{/css/bootstrap.min.css}" type="text/css" rel="stylesheet">
+  <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div class="container-fluid w-75 mt-5 rounded shadow">
+  <div class="row mt-5 align-items-stretch p-5">
+    <div class="img-login d-none d-lg-block col-md-3 col-lg-4 col-xl-4 text-end pt-5 rounded">
+     <!-- <img class="img-login" th:src="@{/imagenes/amoreFondoLogin.jpg}"/>-->
+    </div>
+    <div class="col bg-white p-5 rounded-end">
+      <div class="text-end">
+        <img class="icon-logo" th:src="@{/imagenes/joyaLogo.png}" />
+      </div>
+      <h2 class="fw-bold text-center py-3">Welcome Amore</h2>
+      <form action="#">
+        <div class="mb-4">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" id="email" />
+        </div>
+        <div class="mb-4">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="password" />
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Enter</button>
+        </div>
+        <div class="my-3">
+          <span>Are you new ? <a href="#">Create account</a></span> <br>
+          <span><a href="#">Recover password</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

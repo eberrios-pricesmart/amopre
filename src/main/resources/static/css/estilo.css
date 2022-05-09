@@ -1,0 +1,140 @@
+body {
+  overflow-x: hidden;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.card-container {
+  position: relative;
+}
+
+.card-container:hover .card-content {
+
+  opacity: 0.8;
+}
+
+.card-content {
+  cursor: pointer;
+  width: 100%;
+  opacity: 3;
+  transition: 0.5s;
+}
+
+.img-size {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.color-text-primary {
+  color: #c5acf8 !important;
+}
+
+.color-bg-primary {
+  background-color: #C5ACF8 !important;
+}
+
+.color-bg-secondary {
+  background-color: #F3F3F3 !important;
+  color: #C5ACF8;
+
+}
+
+.espacio {
+  padding-top: 50px;
+  padding-left: 70px;
+  padding-right: 70px;
+
+}
+
+.espacio {
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/*fuente cabezado 7*/
+.imagenes {
+  width: 100%;
+}
+
+.imagenes img {
+  height: 475px;
+  width: 608px;
+  display: inline-block;
+}
+
+.imga1 {
+  padding: 5px 10px 5px 10px;
+  margin: 2px;
+  float: left;
+  width: 200px;
+  text-align: center;
+}
+
+.poster {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.postercelular.poster {
+  min-height: 100% !important;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cabezera {
+  padding-top: 70px
+}
+
+.fondo {
+  background-color: #F8F8F6;
+}
+
+.value-content {
+  align-items: center;
+  flex-direction: row;
+  justify-content: left;
+  padding: 0 5px;
+  display: flex;
+}
+
+.value-content.img-alinear {
+  margin: 0 15px 5px 0;
+  font-size: 0;
+}
+
+.value-content .descripcion {
+  font-size: 12px;
+  line-height: 1;
+  color: #000;
+  margin: 0;
+}
+
+.color_mis_favoritos {
+  color: #000000;
+}
+
+.tamaño_mis_favoritos {
+  font-size: 40px;
+}
+
+.without-border {
+  border: none;
+}
+.img-login{
+  background-image: url("../imagenes/amoreFondoLogin.jpg");
+  background-position: center center;
+}
+.icon-logo{
+  width: 3rem;
+}
+
+
+
