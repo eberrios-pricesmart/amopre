@@ -4,4 +4,4 @@ INSERT INTO carrousel (id, title, description, img_name) VALUES (2, 'Cambios y d
 
 /*User Default*/
 
-INSERT INTO user_accounts (id, username, password) VALUES (1, 'admin', 'admin');
+INSERT INTO user_accounts (id, username, password) VALUES (1, 'admin@amore.com', 'admin');

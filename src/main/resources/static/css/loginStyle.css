@@ -9,7 +9,6 @@ body {
     font-weight: 300;
     color: var(--light);
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 .text-light { color: var(--light) !important; }
@@ -36,10 +35,16 @@ body {
     background-image: url('../imagenes/imagen1.jpg');
     background-size: cover;
     background-position: center;
+    height: 49rem;
 }
 
 .img-2 {
     background-image: url('../imagenes/imagen2.jpg');
     background-size: cover;
     background-position: center;
+    height: 48rem;
+}
+
+.error{
+    color: red;
 }
