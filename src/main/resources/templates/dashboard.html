@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Dashboard</title>
 </head>
 <body>
-<h1>HOLA MUNDO DESDE DASHBOARD</h1>
-<h3>Username <p th:text="${uname}"></p></h3>
+<section layout:fragment="content">
+  <h1>HOLA DESDE EL DASHBOARD</h1>
+</section>
 </body>
 </html>

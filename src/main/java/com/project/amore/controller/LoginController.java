@@ -23,7 +23,7 @@ public class LoginController {
       if (responseUser.getUsername().equals(user.getUsername()) && responseUser.getPassword()
           .equals(user.getPassword())) {
         m.addAttribute("uname", responseUser.getUsername());
-        return "dashboard";
+        return "layout";
       }
     }
     m.addAttribute("error", "Incorrect Username & Password");
