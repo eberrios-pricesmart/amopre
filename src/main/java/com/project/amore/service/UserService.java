@@ -9,6 +9,6 @@ public interface UserService {
 
   User saveUser();
 
-  User findUserByUsername();
+  User findUserByUsername(String username);
 
 }

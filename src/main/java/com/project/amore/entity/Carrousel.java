@@ -22,8 +22,10 @@ public class Carrousel implements Serializable {
 
   private String description;
 
-  @Column(name = "img_name")
-  private String imgName;
+  @Column(name = "button_name")
+  private String buttonName;
+
+  private boolean active;
 
   public Long getId() {
     return id;
@@ -49,11 +51,19 @@ public class Carrousel implements Serializable {
     this.description = description;
   }
 
-  public String getImgName() {
-    return imgName;
+  public String getButtonName() {
+    return buttonName;
   }
 
-  public void setImgName(String imgName) {
-    this.imgName = imgName;
+  public void setButtonName(String imgName) {
+    this.buttonName = imgName;
+  }
+
+  public boolean isActive() {
+    return active;
+  }
+
+  public void setActive(boolean active) {
+    this.active = active;
   }
 }
