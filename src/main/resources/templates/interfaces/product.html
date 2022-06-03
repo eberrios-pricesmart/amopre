@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+</head>
+<body id="body-pd" class="body-pd">
+<header th:replace="layout/layout :: header"></header>
+<div th:replace="layout/layout :: lateral"></div>
+<h1 class="text-primary">PRODUCTOS</h1>
+<br><br>
+<h1>HOLA DESDE PRODUCTOS</h1>
+<!--<div class="table-responsive-lg">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Precio Uni.</th>
+      <th scope="col">Ubicación</th>
+      <th scope="col">Categoría</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="items, iStat: ${products}">
+      <th scope="row" th:text="${iStat.index}+1"></th>
+      <td th:text="${items.description}"></td>
+      <td th:text="${items.stock}"></td>
+      <td th:text="${items.price}"></td>
+      <td th:text="${items.locationBase.name}"></td>
+      <td th:text="${items.category.name}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>-->
+
+<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

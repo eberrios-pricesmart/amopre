@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="head">
+  <meta charset="UTF-8">
+  <title>Sistema de Inventario</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+  <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+  <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
+  <link rel="stylesheet" th:href="@{/css/estilo.css}"/>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body id="body-pd" class="body-pd">
+<div class="z-1 toast-container position-absolute top-0 end-0 p-3">
+<!--  <div th:if="${info != null}" class="toast bg-danger text-white fade show">
+    <div class="toast-header bg-danger text-white">
+      <strong class="me-auto"><i class='bx bxs-error-circle'></i> System</strong>
+      <small>Now</small>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+    </div>
+    <div class="toast-body" th:text="${info}">
+    </div>
+  </div>
+  <div th:if="${success != null}" class="toast bg-danger text-white fade show">
+    <div class="toast-header bg-danger text-white">
+      <strong class="me-auto"><i class='bx bxs-error-circle'></i> System</strong>
+      <small>Now</small>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+    </div>
+    <div class="toast-body" th:text="${success}">
+    </div>
+  </div>-->
+</div>
+
+<header class="header body-pd" id="header" th:fragment="header">
+  <div class="header_toggle"><i class='bx bx-menu' id="header-toggle"></i></div>
+  <div class="header_img">
+    <img src="https://i.imgur.com/hczKIze.jpg" alt="logo"/>
+  </div>
+  <p class="header_text" sec:authorize="isAuthenticated()">
+    Hola <span sec:authentication="name"></span>
+  </p>
+</header>
+<div class="sidebar l-navbar show" id="nav-bar" th:fragment="lateral">
+  <nav class="nav">
+    <div>
+      <a href="#" class="nav_logo">
+        <i class='bx bx-layer nav_logo-icon'></i>
+        <span class="nav_logo-name">Sistema de Inventario</span>
+      </a>
+      <div class="nav_list">
+        <a href="#" class="nav_link" th:classappend="${active.dashboard}? active: ''">
+          <i class='bx bx-grid-alt nav_icon'></i>
+          <span class="nav_name">Dashboard</span>
+        </a>
+        <a href="#" class="nav_link" th:classappend="${active.users}? active: ''">
+          <i class='bx bx-user nav_icon'></i>
+          <span class="nav_name">Users</span>
+        </a>
+        <a th:href="@{/mnt_portada}" class="nav_link" th:classappend="${active.mantenimiento}? active: ''">
+          <i class='bx bx-message-square-detail nav_icon'></i>
+          <span class="nav_name">Mantenimiento</span>
+        </a>
+        <a th:href="@{/products}" class="nav_link" th:classappend="${active.products}? active: ''">
+          <i class='bx bx-bookmark nav_icon'></i>
+          <span class="nav_name">Products</span>
+        </a>
+        <a href="#" class="nav_link" th:classappend="${active.files}? active: ''">
+          <i class='bx bx-folder nav_icon'></i>
+          <span class="nav_name">Files</span>
+        </a>
+        <a href="#" class="nav_link" th:classappend="${active.stats}? active: ''">
+          <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span>
+        </a>
+
+      </div>
+    </div>
+    <a class="nav_link" href="javascript: document.logoutForm.submit()" role="menuitem">
+      <i class='bx bx-log-out nav_icon'></i>
+      <span class="nav_name">SignOut</span>
+    </a>
+    <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+      <input hidden type="submit" value="Sign Out"/>
+    </form>
+  </nav>
+</div>
+<!--Container Main start-->
+<div class="height-100 bg-light">
+  <h4>Main Components</h4>
+</div>
+
+<footer th:fragment="footer">
+  <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/jquery-ui.min.js}"></script>
+  <script th:src="@{/js/main.js}"></script>
+</footer>
+</body>
+</html>
