@@ -1,0 +1,46 @@
+package com.project.amore.security;
+
+import com.project.amore.model.service.impl.UserDetailServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+@Configuration
+@EnableWebSecurity
+public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+
+  @Autowired
+  private UserDetailServiceImpl userDetailService;
+
+  @Autowired
+  private BCryptPasswordEncoder passwordEncoder;
+
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+
+    http.authorizeRequests().antMatchers("/","/uploads/**", "/css/**", "/js/**", "/images/**", "/index").permitAll()
+        .antMatchers("/products").hasAnyRole("ADMIN")
+        .anyRequest().authenticated()
+        .and()
+        .formLogin()
+        .loginPage("/login")
+        .defaultSuccessUrl("/success", true)
+        .permitAll()
+        .and()
+        .logout()
+        .permitAll();
+  }
+
+  @Autowired
+  public void configurerGlobal(AuthenticationManagerBuilder build) throws Exception
+  {
+    build.userDetailsService(userDetailService)
+        .passwordEncoder(passwordEncoder);
+
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+</head>
+<body id="body-pd" class="body-pd">
+<header th:replace="layout/layout :: header"></header>
+<div th:replace="layout/layout :: lateral"></div>
+<h1 class="text-primary">MANTENIMIENTO</h1>
+<h3 th:text="${title}"></h3>
+<br>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <a th:href="@{/mnt_portada}" class="btn btn-success col-xs-12 col-md-2 mx-2">Portada</a>
+    <a th:href="@{/mnt_blog}" class="btn btn-success col-xs-12 col-md-2 mx-2">Blog</a>
+    <a href="#" class="btn btn-success col-xs-12 col-md-2 mx-2">Nosotros</a>
+  </div>
+</div>
+<br>
+<div class="table-responsive-lg">
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Contenido</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Botón</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Acción</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="items, iStat: ${blogList}">
+      <th scope="row" th:text="${iStat.index}+1"></th>
+      <td th:text="${items.title}"></td>
+      <td th:text="${items.content}"></td>
+      <td th:text="${items.author}"></td>
+      <td th:text="${items.buttonName}"></td>
+      <td>
+        <img th:if="${#strings.length(items.image) > 0}" class="img-thumbnail rounded float-left"
+             style="max-width: 50%;" th:src="@{'/uploads/' + ${items.image}}"
+             th:alt="${items.image}" />
+      </td>
+      <td>
+        <a th:href="@{/blog_form/} + ${items.id}" class="cursor"><i class='bx bxs-edit-alt text-warning'></i></a>
+        <a th:href="@{/eliminar/blog/} + ${items.id}" onclick="return confirm('Esta seguro de eliminar?')" class="cursor"><i class='bx bxs-trash mx-2 text-danger'></i></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <a th:href="@{/blog_form}" class="btn btn-success">Agregar</a>
+</div>
+
+<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
